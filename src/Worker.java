@@ -70,7 +70,7 @@ public class Worker extends ExtensionsContainer implements IPersonalDetails, Ser
 
     @Override
     public double getPayment() {
-        return payment;
+        return payment * netto;
     }
 
     @Override

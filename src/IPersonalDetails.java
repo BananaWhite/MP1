@@ -1,6 +1,7 @@
 import java.time.LocalDate;
 
 public interface IPersonalDetails {
+    static final double netto = 0.75;
     void setName(String name);
     void setLastName(String lastName);
     void setFamilyName(String familyName);

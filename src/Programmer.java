@@ -63,7 +63,7 @@ public class Programmer extends ExtensionsContainer implements IPersonalDetails,
     }
 
     public double getPayment() {
-        return payment;
+        return payment * netto;
     }
 
     public LocalDate getShiftStart() {
