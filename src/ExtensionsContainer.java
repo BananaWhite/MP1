@@ -1,7 +1,5 @@
 import java.io.*;
 import java.util.*;
-import java.util.function.BiConsumer;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class ExtensionsContainer implements Serializable {
@@ -42,6 +40,10 @@ public class ExtensionsContainer implements Serializable {
         }
     }
 
+    public static void clearExtents() {
+        extents.clear();
+    }
+
     public static Iterable<? extends ExtensionsContainer> getExtents(
             Class<? extends ExtensionsContainer> clazz) throws ClassNotFoundException {
         if(extents.containsKey(clazz))
@@ -68,5 +70,25 @@ public class ExtensionsContainer implements Serializable {
                                 .collect(Collectors.toList())
                         )
                 )).forEach((e, f) -> System.out.println(e + " " + f));
+    }
+
+    public static void showAllExtents() {
+        extents.entrySet()
+                .stream()
+                .collect(Collectors.groupingBy(Map.Entry::getValue))
+                .values()
+                .stream()
+                .collect(Collectors.toMap(
+                        item -> item.get(0).getValue(),
+                        item -> new ArrayList<>(
+                                item.stream()
+                                .map(Map.Entry::getKey)
+                                .collect(Collectors.toList())
+                        )
+                )).forEach((e, f) -> System.out.println(e + " " + f));
+    }
+
+    public static boolean isExtentsMapEmpty() {
+        return extents.isEmpty();
     }
 }

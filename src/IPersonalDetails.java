@@ -2,6 +2,7 @@ import java.time.LocalDate;
 
 public interface IPersonalDetails {
     static final double netto = 0.75;
+    static final double teamLeaderBonus = 0.4;
     void setName(String name);
     void setLastName(String lastName);
     void setFamilyName(String familyName);

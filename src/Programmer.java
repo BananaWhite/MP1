@@ -7,6 +7,7 @@ public class Programmer extends ExtensionsContainer implements IPersonalDetails,
     private String familyName;
     private LocalDate shiftStart;
     private LocalDate shiftEnd;
+    private String teamManagerName;
     private double payment;
 
     public Programmer() {
@@ -23,6 +24,10 @@ public class Programmer extends ExtensionsContainer implements IPersonalDetails,
         this.shiftEnd = shiftEnd;
     }
 
+    public void setTeamManagerName(String teamManagerName) {
+        this.teamManagerName = teamManagerName;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -37,7 +42,7 @@ public class Programmer extends ExtensionsContainer implements IPersonalDetails,
     }
 
     public void setPayment(double payment) {
-        this.payment = payment;
+        this.payment = payment * netto;
     }
 
     @Override
@@ -62,8 +67,12 @@ public class Programmer extends ExtensionsContainer implements IPersonalDetails,
         return familyName;
     }
 
+    public String getTeamManagerName() {
+        return teamManagerName;
+    }
+
     public double getPayment() {
-        return payment * netto;
+        return payment;
     }
 
     public LocalDate getShiftStart() {
