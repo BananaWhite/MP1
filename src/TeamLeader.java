@@ -53,22 +53,22 @@ public class TeamLeader extends ExtensionsContainer implements IPersonalDetails,
 
     @Override
     public void setEndShift(LocalDate endShift) {
-
+        this.endShift = endShift;
     }
 
     @Override
     public String getName() {
-        return null;
+        return name;
     }
 
     @Override
     public String getLastName() {
-        return null;
+        return lastName;
     }
 
     @Override
     public String getFamilyName() {
-        return null;
+        return familyName;
     }
 
     public List<String> getTeamMembersNames() {
@@ -77,17 +77,17 @@ public class TeamLeader extends ExtensionsContainer implements IPersonalDetails,
 
     @Override
     public double getPayment() {
-        return 0;
+        return payment;
     }
 
     @Override
     public LocalDate getShiftStart() {
-        return null;
+        return startShift;
     }
 
     @Override
     public LocalDate getShiftEnd() {
-        return null;
+        return endShift;
     }
 
 
